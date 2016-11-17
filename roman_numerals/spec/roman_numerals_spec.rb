@@ -5,22 +5,29 @@ require 'roman_numerals'
     context 'numerals test' do
 
       it 'should return "I" when 1 is inputed' do
-        expect(subject.roman_numerals(1)).to eq "I"
+        expect(subject.conversion(1)).to eq "I"
       end
 
       it 'should return "II" when 2 is inputed' do
-        expect(subject.roman_numerals(2)).to eq "II"
+        expect(subject.conversion(2)).to eq "II"
       end
-      # 
-      # it 'should return "III" when 3 is inputed' do
-      #   expect(subject.roman_numerals(3)).to eq "III"
-      # end
 
-    end
+      it 'should return "III" when 3 is inputed' do
+        expect(subject.conversion(3)).to eq "III"
+      end
 
-    context 'hash tests' do
+      it 'should return "XL" when 40 is entered' do
+        expect(subject.conversion(40)).to eq "XL"
+      end
 
-      it { is_expected.to respond_to(:numbers_hash)}
+      it 'should return "L" when 50 is entered' do
+        expect(subject.conversion(50)).to eq "L"
+      end
+
+      it 'should return "CMXCIX" when 999 is entered' do
+        expect(subject.conversion(999)).to eq "CMXCIX"
+      end
+
 
     end
 
